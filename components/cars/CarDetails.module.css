@@ -1,0 +1,45 @@
+.page { background: var(--color-off-white); }
+.breadcrumb { display: flex; flex-wrap: wrap; gap: var(--space-2); padding-block: var(--space-5); color: var(--color-muted); font-size: var(--text-sm); }
+.breadcrumb a { border-bottom: 1px solid var(--color-line); color: var(--color-charcoal); }
+.overview { padding-bottom: var(--space-9); border-bottom: 1px solid var(--color-line); }
+.detailGrid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(22rem, .65fr); align-items: start; gap: var(--space-7); }
+.summary { position: sticky; top: var(--space-5); padding: var(--space-6); border-top: 3px solid var(--color-charcoal); background: var(--color-paper); box-shadow: var(--shadow-subtle); }
+.summary :global(.displayTitle) { font-size: clamp(2.15rem, 4vw, 3.5rem); }
+.topline { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-5); color: var(--color-muted); font-size: var(--text-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.available { color: var(--color-success); }
+.price { margin: var(--space-4) 0 var(--space-5); color: var(--color-red); font-size: clamp(1.55rem, 2.7vw, 2rem); font-weight: 750; }
+.specs { display: grid; grid-template-columns: 1fr 1fr; margin: 0; border-top: 1px solid var(--color-line); }
+.specs div { display: grid; gap: .1rem; padding: var(--space-3) 0; border-bottom: 1px solid var(--color-line); }
+.specs div:nth-child(even) { padding-left: var(--space-4); border-left: 1px solid var(--color-line); }
+.specs dt { color: var(--color-muted); font-size: .68rem; letter-spacing: .07em; text-transform: uppercase; }
+.specs dd { margin: 0; font-size: var(--text-sm); font-weight: 700; }
+.actions { display: grid; gap: var(--space-3); margin-top: var(--space-5); }
+.share { display: flex; align-items: center; gap: .5rem; margin: var(--space-5) auto 0; padding: 0 0 .25rem; border: 0; border-bottom: 1px solid currentColor; background: none; font-size: var(--text-sm); font-weight: 700; }
+.share:hover { color: var(--color-red); }
+.shareFeedback { min-height: 1.5rem; margin: var(--space-2) 0 0; color: var(--color-success); font-size: var(--text-sm); text-align: center; }
+.informationGrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-9); }
+.information article > p:not(:global(.eyebrow)) { max-width: 37rem; color: var(--color-muted); font-size: var(--text-md); }
+.features ul { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--space-5); margin: var(--space-6) 0 0; padding: 0; border-top: 1px solid var(--color-line); list-style: none; }
+.features li { padding: var(--space-3) 0 var(--space-3) 1.4rem; border-bottom: 1px solid var(--color-line); background: linear-gradient(var(--color-red), var(--color-red)) no-repeat left center / .45rem 2px; font-size: var(--text-sm); font-weight: 650; }
+.callout { padding-block: var(--space-8); }
+.calloutInner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-7); }
+.calloutInner > div { max-width: 45rem; }
+.callout p:last-child { margin: var(--space-3) 0 0; color: #c8c4bc; }
+.callout :global(.eyebrow) { color: var(--color-red-on-dark); }
+.related { background: var(--color-paper); }
+.relatedHeading { display: flex; align-items: end; justify-content: space-between; gap: var(--space-5); margin-bottom: var(--space-7); }
+.relatedHeading a { color: var(--color-red); font-weight: 700; }
+.relatedGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); max-width: 54rem; }
+.mobileActions { display: none; }
+@media (max-width: 64rem) { .detailGrid { grid-template-columns: 1fr; } .summary { position: static; } }
+@media (max-width: 48rem) {
+  .page { padding-bottom: 4.75rem; }
+  .overview { padding-bottom: var(--space-7); }
+  .detailGrid { gap: var(--space-5); }
+  .summary { margin-inline: -1rem; padding: var(--space-5) 1rem; box-shadow: none; }
+  .informationGrid, .features ul, .relatedGrid { grid-template-columns: 1fr; gap: var(--space-7); }
+  .features ul { gap: 0; }
+  .calloutInner, .relatedHeading { align-items: stretch; flex-direction: column; }
+  .mobileActions { position: fixed; right: 0; bottom: 0; left: 0; z-index: 45; display: grid; grid-template-columns: 1.2fr .8fr; gap: var(--space-2); padding: .65rem 1rem; border-top: 1px solid var(--color-line-dark); background: var(--color-charcoal); }
+}
+

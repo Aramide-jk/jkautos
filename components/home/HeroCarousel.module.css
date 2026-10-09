@@ -1,0 +1,171 @@
+.hero {
+  position: relative;
+  min-height: 35.5rem;
+  overflow: hidden;
+  background-color: #171717;
+  color: var(--color-white);
+}
+.images {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.track {
+  display: flex;
+  height: 100%;
+  transition: transform 700ms var(--ease-in-out);
+}
+.image {
+  flex: 0 0 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: linear-gradient(
+    90deg,
+    rgb(12 12 12 / 95%) 0%,
+    rgb(14 14 14 / 86%) 33%,
+    rgb(14 14 14 / 46%) 58%,
+    rgb(14 14 14 / 8%) 100%
+  );
+}
+.grid {
+  position: relative;
+  z-index: 2;
+  min-height: 35.5rem;
+}
+.copy {
+  display: flex;
+  width: min(41.25rem, 58%);
+  min-height: 35.5rem;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-6) 0 7.5rem;
+  animation: copyIn var(--duration-slow) var(--ease-out);
+}
+@keyframes copyIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.eyebrow {
+  margin-bottom: var(--space-4);
+  color: #efb9bb;
+  font-size: 0.875rem;
+  letter-spacing: 0.14em;
+}
+.title {
+  max-width: 41.25rem;
+  color: var(--color-white);
+  font-size: clamp(2rem, 2.6vw, 2.5rem);
+  line-height: 1.04;
+  text-shadow: 0 3px 24px rgb(0 0 0 / 25%);
+}
+.title span {
+  display: block;
+  margin-top: 0.08em;
+  color: var(--color-red);
+}
+.intro {
+  max-width: 35rem;
+  margin: var(--space-5) 0 0;
+  color: #e2ddd5;
+  font-size: var(--text-md);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+.indicators {
+  position: absolute;
+  left: 0;
+  bottom: 6rem;
+  display: flex;
+  gap: var(--space-4);
+}
+.indicator {
+  position: relative;
+  padding: 0 0 0.35rem;
+  border: 0;
+  background: none;
+  color: rgb(255 255 255 / 55%);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: color var(--transition);
+}
+.indicator:hover {
+  color: rgb(255 255 255 / 82%);
+}
+.indicatorActive {
+  color: var(--color-white);
+}
+.indicatorActive::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--color-red);
+  content: "";
+}
+
+@media (max-width: 48rem) {
+  .hero,
+  .grid,
+  .copy {
+    min-height: 36rem;
+  }
+  .copy {
+    width: 90%;
+    padding: var(--space-7) 0 7rem;
+  }
+  .eyebrow {
+    max-width: 22rem;
+    font-size: 0.64rem;
+    line-height: 1.5;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .shade {
+    background-image: linear-gradient(
+      90deg,
+      rgb(12 12 12 / 96%) 0%,
+      rgb(14 14 14 / 84%) 54%,
+      rgb(14 14 14 / 48%) 100%
+    );
+  }
+  .indicators {
+    bottom: 5rem;
+  }
+}
+
+@media (max-width: 32rem) {
+  .copy {
+    width: 100%;
+  }
+  .actions {
+    display: grid;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copy {
+    animation: none;
+  }
+  .track {
+    transition: none;
+  }
+}

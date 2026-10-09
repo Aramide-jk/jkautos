@@ -1,0 +1,4 @@
+.skeleton { position: relative; overflow: hidden; border-radius: var(--radius-sm); background: var(--color-line); }
+.skeleton::after { position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgb(255 255 255 / 55%), transparent); content: ""; transform: translateX(-100%); animation: skeletonShimmer 1.6s var(--ease-in-out) infinite; }
+.rounded { border-radius: 50%; }
+@keyframes skeletonShimmer { to { transform: translateX(100%); } }

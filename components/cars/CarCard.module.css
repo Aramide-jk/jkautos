@@ -1,0 +1,23 @@
+.card { display: flex; overflow: hidden; flex-direction: column; border: 1px solid #dedad2; border-radius: 0.45rem; background: var(--color-white); box-shadow: 0 9px 24px rgb(0 0 0 / 7.5%); }
+.image { position: relative; display: block; overflow: hidden; aspect-ratio: 16 / 9; background: #ded9d0; }
+.image img { object-fit: cover; transition: transform var(--duration-slow) var(--ease-out), opacity var(--duration-slow) var(--ease-out); }
+.card:hover .image img { transform: scale(1.022); }
+.imageNote { position: absolute; right: var(--space-2); bottom: var(--space-2); padding: 0.2rem 0.4rem; background: rgb(0 0 0 / 76%); color: var(--color-white); font-size: 0.58rem; letter-spacing: 0.03em; }
+.body { display: flex; flex: 1; flex-direction: column; padding: 1.15rem 1.2rem 1.2rem; }
+.title { margin: 0; font-family: var(--font-sans); font-size: clamp(1.15rem, 1.8vw, 1.35rem); font-weight: 800; line-height: 1.25; letter-spacing: -0.015em; }
+.title a:hover { color: var(--color-red); }
+.summary { display: flex; align-items: center; gap: 0.55rem; margin: 0.35rem 0 0; color: #77716a; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.065em; text-transform: uppercase; }
+.divider { color: #bbb5ad; font-weight: 400; }
+.price { margin: 0.65rem 0 0.9rem; color: var(--color-red); font-size: clamp(1.45rem, 2.35vw, 1.8rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.025em; }
+.specs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.45rem; margin: auto 0 0; padding: 0.8rem 0; border-top: 1px solid #e2ded7; border-bottom: 1px solid #e2ded7; list-style: none; }
+.specs li { display: flex; min-width: 0; align-items: center; justify-content: center; gap: 0.35rem; color: #625d57; font-size: 0.7rem; font-weight: 650; white-space: nowrap; }
+.specs svg { width: 0.95rem; height: 0.95rem; flex: none; fill: none; stroke: var(--color-red); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.specs span { overflow: hidden; text-overflow: ellipsis; }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-top: 1rem; }
+.actions a { min-height: 2.85rem; padding: 0.65rem 0.55rem; font-size: 0.78rem; }
+.book { border-color: var(--color-red) !important; background: var(--color-white) !important; color: var(--color-charcoal) !important; }
+.book:hover { background: #fff4f3 !important; color: var(--color-red-dark) !important; }
+
+@media (max-width: 23rem) {
+  .actions { grid-template-columns: 1fr; }
+}

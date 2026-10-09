@@ -1,0 +1,26 @@
+.hero { padding-block: var(--space-10); background: var(--color-charcoal); color: var(--color-off-white); }
+.hero :global(.sectionCopy) { color: #c8c4bc; }
+.hero :global(.eyebrow) { color: var(--color-red-on-dark); }
+.infoGrid { display: grid; grid-template-columns: 0.8fr 1.5fr; gap: var(--space-9); }
+.infoGrid h2, .contactCard h2 { margin: 0; font-family: var(--font-display); font-size: var(--text-xl); font-weight: 400; }
+.copy { display: grid; gap: var(--space-5); font-size: var(--text-md); }
+.copy p { margin: 0; }
+.paper { background: var(--color-paper); }
+.process { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); margin-top: var(--space-7); }
+.process article { padding: var(--space-5); border-top: 2px solid var(--color-red); }
+.process h3 { margin: 0 0 var(--space-2); }
+.process p { margin: 0; color: var(--color-muted); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
+.contactLayout { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: var(--space-7); align-items: start; }
+.contactCard { padding: var(--space-6); border: 1px solid var(--color-line); border-radius: var(--radius-md); background: var(--color-paper); }
+.contactCard dl { display: grid; gap: var(--space-5); margin: var(--space-6) 0 0; }
+.contactCard dt { color: var(--color-muted); font-size: var(--text-sm); font-weight: 700; }
+.contactCard dd { margin: 0.15rem 0 0; font-size: var(--text-md); }
+.contactCard dd > a:not([class]) { text-decoration: underline; text-decoration-color: var(--color-line); text-underline-offset: 0.22em; }
+.provisional { display: block; margin-top: 0.25rem; color: var(--color-red-dark); font-size: var(--text-xs); font-weight: 700; }
+.mobileAction { display: none; }
+@media (max-width: 48rem) {
+  .infoGrid, .contactLayout { grid-template-columns: 1fr; gap: var(--space-6); }
+  .process { grid-template-columns: 1fr; }
+  .mobileAction { position: sticky; bottom: 0; z-index: 20; display: block; padding: 0.75rem 1rem; background: rgb(0 0 0 / 96%); }
+}

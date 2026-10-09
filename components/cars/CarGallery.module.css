@@ -1,0 +1,12 @@
+.gallery { min-width: 0; }
+.main { position: relative; aspect-ratio: 1.42 / 1; overflow: hidden; background: #ddd8cf; }
+.main img { object-fit: cover; }
+.note { position: absolute; right: var(--space-3); bottom: var(--space-3); z-index: 1; padding: 0.35rem 0.55rem; background: rgb(0 0 0 / 82%); color: #fff; font-size: 0.72rem; letter-spacing: 0.03em; }
+.thumbnails { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); margin-top: var(--space-3); }
+.thumbnail { position: relative; aspect-ratio: 1.55 / 1; overflow: hidden; padding: 0; border: 2px solid transparent; background: #ddd8cf; }
+.thumbnail img { object-fit: cover; }
+.active { border-color: var(--color-red); }
+@media (max-width: 48rem) {
+  .gallery { margin-inline: -1rem; }
+  .thumbnails { padding-inline: 1rem; }
+}

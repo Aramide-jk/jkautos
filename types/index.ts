@@ -1,0 +1,21 @@
+export type Car = {
+  slug: string;
+  name: string;
+  year: number;
+  price: number;
+  priceLabel: string;
+  mileage: string;
+  transmission: string;
+  fuel: string;
+  condition: string;
+  location: string;
+  colour: string;
+  image: string;
+  images: readonly string[];
+  alt: string;
+  imageNote?: string;
+  features: readonly string[];
+  description: string;
+  featured: boolean;
+  addedAt: string;
+};
